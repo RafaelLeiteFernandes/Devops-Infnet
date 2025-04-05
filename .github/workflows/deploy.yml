@@ -48,3 +48,5 @@ jobs:
           images: |
             ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:latest
           namespace: default
+
+          
