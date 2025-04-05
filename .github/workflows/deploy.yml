@@ -39,14 +39,14 @@ jobs:
       - name: Push da imagem pro Docker Hub
         run: docker push ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:latest
 
-      - name: Deploy para Kubernetes
-        uses: azure/k8s-deploy@v1
-        with:
-          manifests: |
-            ./k8s/deployment.yaml
-            ./k8s/service.yaml
-          images: |
-            ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:latest
-          namespace: default
+#      - name: Deploy para Kubernetes
+#        uses: azure/k8s-deploy@v1
+#        with:
+#          manifests: |
+#            ./k8s/deployment.yaml
+#            ./k8s/service.yaml
+#          images: |
+#           ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:latest
+#          namespace: default
 
           
