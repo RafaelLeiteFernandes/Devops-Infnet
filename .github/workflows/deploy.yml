@@ -19,8 +19,12 @@ jobs:
           node-version: '18'
           cache: 'pnpm'
 
-      - name: Ativar o pnpm com Corepack
-        run: corepack enable && corepack prepare pnpm@10.5.2 --activate
+      - name: Instalar pnpm com corepack
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.5.2 --activate
+          echo "$(pnpm --version) instalado com sucesso"
+
 
       - name: Instalar dependências
         run: pnpm install
