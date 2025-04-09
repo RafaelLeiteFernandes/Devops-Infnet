@@ -20,7 +20,13 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prometheus/
+              readOnly: true
+            - name: data
+              mountPath: /prometheus
       volumes:
         - name: config-volume
           configMap:
             name: prometheus-config
+        - name: data
+          persistentVolumeClaim:
+            claimName: prometheus-pvc
