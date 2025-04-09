@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: guia-infnet
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: guia-infnet
   ports:
@@ -11,3 +11,5 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 3000
+      nodePort: 30080
+      
